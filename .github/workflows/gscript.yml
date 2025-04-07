@@ -1,0 +1,16 @@
+name: Comment on issue close
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  comment_on_close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on closed issue
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            ✅ Kiitos! Issue on nyt suljettu ja merkattu valmiiksi.
