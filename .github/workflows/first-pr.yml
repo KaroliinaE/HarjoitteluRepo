@@ -1,0 +1,18 @@
+name: Welcome First Pull Request
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  first_pr_greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet first-time contributor
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: |
+            🎉 Onnittelut ensimmäisestä pull requestistasi!  
+            Kiitos panoksestasi projektiin – arvostamme sitä. 🚀  
+            Varmistathan vielä, että PR on linkitetty siihen issueen, jota se koskee.
